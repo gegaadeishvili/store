@@ -3,7 +3,10 @@
  body:not(.firstH1) {
     font-family: "Noto Sans Georgian";
   }
-
+  body {
+    cursor: url("/hatchet.png"), auto;
+    min-height: 100vh;
+}
   header{
     background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
     width: 100%;
@@ -13,6 +16,7 @@
     align-items: center;
     text-align: center;
     gap: 150px;
+    cursor: url("axe.jpg");
 }
 header > h1{
     font-family: 'Dancing Script';
@@ -80,9 +84,6 @@ h2, p {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-.teamCont:hover .team-text{
-    transform: translateY(0);
 }
 .team{
     display: flex;
@@ -211,6 +212,7 @@ footer{
     display: flex;
     gap: 150px;
     background-color: black;
+    bottom: 0;
 }
 .labuch{
     font-family: 'Dancing Script';
@@ -317,4 +319,57 @@ height: 35px;
 }
 .meatH1{
     padding: 25px;
+}
+.mainTeamText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mainTeamImg{
+    display: flex;
+    gap: 2px;
+}
+.ribs{
+    width: 350px;
+    height: 400px;
+}
+.insti{
+    width: 250px;
+    height: 150px;
+    background: rgba(183, 178, 178, 0.8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    header, section, footer {
+        padding: 10px;
+    }
+}
+
+/* Media query for iPhone 12 */
+@media only screen and (max-width: 390px) {
+    header, section, footer {
+        padding: 5px;
+    }
+}
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 390px) {
+    .mainContainer {
+        padding: 10px;
+    }
+
+    .abStore {
+        flex-direction: column;
+    }
 }
