@@ -1,82 +1,416 @@
- @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Bebas+Neue&family=Caprasimo&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Ysabeau+Infant:wght@600&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Anton&family=Bebas+Neue&family=Caprasimo&family=Dancing+Script&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Whisper&family=Ysabeau+Infant:wght@600&display=swap');
- body:not(.firstH1) {
-    font-family: "Noto Sans Georgian";
-  }
-  body {
-    cursor: url("/hatchet.png"), auto;
-    min-height: 100vh;
-}
-  header{
-    background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 150px;
-    cursor: url("axe.jpg");
-}
-header > h1{
-    font-family: 'Dancing Script';
-    font-weight: 400;
-}
-header > p{
-    color: aliceblue;
+@import url("https://fonts.googleapis.com/css2?family=Agdasima&family=Bebas+Neue&family=Caprasimo&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Ysabeau+Infant:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agdasima&family=Anton&family=Bebas+Neue&family=Caprasimo&family=Dancing+Script&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Whisper&family=Ysabeau+Infant:wght@600&display=swap");
+body:not(.firstH1) {
+  font-family: "Noto Sans Georgian";
 }
 
-.products{
-    display: flex;
-    gap: 250px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.mainLayout{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: #9c9494;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+
+body {
+  cursor: url("/hatchet.png"), auto;
+}
+header {
+  background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  cursor: url("axe.jpg");
+}
+header > h1 {
+  font-family: "Dancing Script";
+  font-weight: 400;
+}
+header > p {
+  color: aliceblue;
+}
+
+.mainContainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.products {
+  display: flex;
+  gap: 250px;
+}
+.mainLayout {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #9c9494;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .steak {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-    background-color: white;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  background-color: white;
 }
 
 .meat-container:hover .steak {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .meat-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
 }
 
 .mainLayout:hover .meat-text {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-h2, p {
-    margin: 0;
-    color: #333;
+h2,
+p {
+  margin: 0;
+  color: #333;
 }
-.teamCont:hover .team-text{
-    transform: translateY(0);
+.teamCont:hover .team-text {
+  transform: translateY(0);
 }
-.teamCont{
+.teamCont {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #9c9494;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.team {
+  display: flex;
+  gap: 250px;
+}
+.teamImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  background-color: white;
+}
+.team-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.abStore {
+  display: flex;
+  gap: 70px;
+  padding: 50px 0 50px 50px;
+}
+.abProduct {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #9c9494;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.prod {
+  display: flex;
+  gap: 250px;
+}
+.medalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  background-color: white;
+}
+.medal-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.abProduct:hover .medal-text {
+  transform: translateY(0);
+}
+.contactUs {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #9c9494;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.con {
+  display: flex;
+  gap: 250px;
+}
+.phone {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  background-color: white;
+}
+.conText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.contactUs:hover .conText {
+  transform: translateY(0);
+}
+.inst {
+  display: flex;
+  color: white;
+}
+.inst > p {
+  color: white;
+}
+.inst > img {
+  width: 25px;
+  height: 25px;
+}
+.face {
+  display: flex;
+}
+.face > p {
+  color: white;
+}
+.face > img {
+  width: 25px;
+  height: 25px;
+}
+.socs {
+  gap: 50px;
+  color: white;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  bottom: 0;
+}
+.labuch {
+  font-family: "Dancing Script";
+  font-weight: 400;
+  color: white;
+}
+.location {
+  color: white;
+}
+.location > p {
+  color: white;
+}
+.meatStr {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-left: 50px;
+}
+.phn {
+  display: flex;
+  gap: 5px;
+}
+.phn > img {
+  width: 25px;
+  height: 25px;
+}
+.meats {
+  display: flex;
+  gap: 50px;
+  padding: 25px 25px 50px 25px;
+}
+.steak13 {
+  width: 450px;
+  height: 250px;
+}
+.meats2 {
+  display: flex;
+  gap: 50px;
+  padding: 25px 25px 50px 25px;
+}
+.steak12 {
+  width: 450px;
+  height: 250px;
+}
+.socsUnd {
+  padding-bottom: 20px;
+}
+.meats3 {
+  display: flex;
+  gap: 50px;
+  padding: 25px 25px 50px 25px;
+}
+.meatPrd {
+  padding: 25px 50px 25px;
+}
+.arrow {
+  width: 35px;
+  height: 35px;
+  padding: 25px 25px 0 25px;
+}
+.arrowH1 {
+  display: flex;
+}
+.arrowBtn {
+  width: 350px;
+  height: 50px;
+  background-color: white;
+  border: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: none;
+  display: flex;
+  padding: 25px 25px 50px 25px;
+  font-family: "Noto Sans Georgian";
+}
+.meat1:hover {
+  background-color: #9c9494;
+}
+.meat2:hover {
+  background-color: #9c9494;
+}
+.meat3:hover {
+  background-color: #9c9494;
+}
+.arrowImg {
+  width: 35px;
+  height: 35px;
+}
+.meatDes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+}
+.meatsDesText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.meatBig {
+  width: 700px;
+  height: 500px;
+}
+.meatH1 {
+  padding: 25px;
+}
+.mainTeamText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.mainTeamImg {
+  display: flex;
+  gap: 2px;
+}
+.ribs {
+  width: 350px;
+  height: 400px;
+}
+.insti {
+  width: 250px;
+  height: 150px;
+  background: rgba(183, 178, 178, 0.8);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+@media screen and (max-width: 550px) {
+  .abStore {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .str{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.teamCont:hover .team-text {
+  transform: translateY(0);
+}
+.teamCont {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #b9b9b9;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.team {
+  display: flex;
+  gap: 250px;
+}
+.teamImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
+}
+.team-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.mainLayout {
     position: relative;
     width: 300px;
     height: 300px;
@@ -84,19 +418,21 @@ h2, p {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-.team{
-    display: flex;
-    gap: 250px;
-}
-.teamImg{
+  }
+  
+  .steak {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
-    background-color: white;
+    background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
 }
-.team-text{
+  
+  .meat-container:hover .steak {
+    transform: scale(1.1);
+  }
+  
+  .meat-text {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -107,13 +443,20 @@ h2, p {
     border-bottom-right-radius: 10px;
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out;
-}
-.abStore{
+  }
+  
+  .mainLayout:hover .meat-text {
+    transform: translateY(0);
+  }
+  .abStore {
     display: flex;
     gap: 70px;
-    padding: 50px 0 50px 50px;
-}
-.abProduct{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+  }
+  .abProduct {
     position: relative;
     width: 300px;
     height: 300px;
@@ -121,19 +464,19 @@ h2, p {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-.prod{
+  }
+  .prod {
     display: flex;
     gap: 250px;
-}
-.medalImg{
+  }
+  .medalImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
-    background-color: white;
-}
-.medal-text{
+    background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
+  }
+  .medal-text {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -144,11 +487,11 @@ h2, p {
     border-bottom-right-radius: 10px;
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out;
-}
-.abProduct:hover .medal-text{
+  }
+  .abProduct:hover .medal-text {
     transform: translateY(0);
-}
-.contactUs{
+  }
+  .contactUs {
     position: relative;
     width: 300px;
     height: 300px;
@@ -156,19 +499,19 @@ h2, p {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-.con{
+  }
+  .con {
     display: flex;
     gap: 250px;
-}
-.phone{
+  }
+  .phone {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
-    background-color: white;
-}
-.conText{
+    background-image: linear-gradient(120deg, #f42b2b 0%, #a738ed 100%);
+  }
+  .conText {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -179,197 +522,36 @@ h2, p {
     border-bottom-right-radius: 10px;
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out;
-}
-.contactUs:hover .conText{
+  }
+  .contactUs:hover .conText {
     transform: translateY(0);
-}
-.inst{
+  }
+  .labuch {
+    font-family: "Dancing Script";
+    color: white;
+    font-size: 26px;
+  }
+  .bestMt{
+    font-size: 24px;
+  }
+  .meatStr {
     display: flex;
+    flex-direction: column;
     color: white;
-}
-.inst > p{
-    color: white;
-}
-.inst > img{
-    width: 25px;
-    height: 25px;
-}
-.face{
-    display: flex;
-}
-.face > p{
-    color: white;
-}
-.face > img{
-    width: 25px;
-    height: 25px;
-}
-.socs{
+    padding-right: 20px;
+  }
+  .ourSocs{
+    display: none;
+  }
+  .ourLoc{
+    font-size: 18px;
+  }
+  .uni{
+    font-size: 14px;
+  }
+  .socs {
     gap: 50px;
     color: white;
-}
-footer{
-    display: flex;
-    gap: 150px;
-    background-color: black;
-    bottom: 0;
-}
-.labuch{
-    font-family: 'Dancing Script';
-    font-weight: 400;
-    color: white;
-}
-.location{
-    color: white;
-}
-.location > p{
-    color: white;
-}
-.meatStr{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    padding-left: 50px;
-}
-.phn{
-    display: flex;
-    gap: 5px;
-}
-.phn > img{
-    width: 25px;
-    height: 25px;
-}
-.meats{
-    display: flex;
-    gap: 50px;
-    padding:25px 25px 50px 25px;
-}
-.steak13{
-    width: 450px;
-    height: 250px;
-}
-.meats2{
-    display: flex;
-    gap: 50px;
-    padding:25px 25px 50px 25px;
-}
-.steak12{
-    width: 450px;
-    height: 250px;
-}
-.socsUnd{
-    padding-bottom: 20px;
-}
-.meats3{
-    display: flex;
-    gap: 50px;
-    padding:25px 25px 50px 25px;
-}
-.meatPrd{
-    padding:25px 50px 25px;
-}
-.arrow{
-    width: 35px;
-    height: 35px;
-    padding: 25px 25px 0 25px;
-}
-.arrowH1{
-    display: flex;
-}
-.arrowBtn{
-width: 350px;
-height: 50px;
-background-color: white;
-border: white;
-justify-content: center;
-align-items: center;
-text-align: center;
-background:none;
-display: flex;
-padding: 25px 25px 50px 25px;
-font-family:"Noto Sans Georgian" ;
-}
-.meat1:hover{
-    background-color: #9c9494;
-}
-.meat2:hover{
-    background-color: #9c9494;
-}
-.meat3:hover{
-    background-color: #9c9494;
-}
-.arrowImg{
-    width: 35px;
-height: 35px;
-}
-.meatDes{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 25px;
-}
-.meatsDesText{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.meatBig{
-    width: 700px;
-    height: 500px;
-}
-.meatH1{
-    padding: 25px;
-}
-.mainTeamText{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.mainTeamImg{
-    display: flex;
-    gap: 2px;
-}
-.ribs{
-    width: 350px;
-    height: 400px;
-}
-.insti{
-    width: 250px;
-    height: 150px;
-    background: rgba(183, 178, 178, 0.8);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 25px;
-}
-
-
-@media only screen and (max-width: 600px) {
-    header, section, footer {
-        padding: 10px;
-    }
-}
-
-/* Media query for iPhone 12 */
-@media only screen and (max-width: 390px) {
-    header, section, footer {
-        padding: 5px;
-    }
-}
-
-/* Adjustments for smaller screens */
-@media only screen and (max-width: 390px) {
-    .mainContainer {
-        padding: 10px;
-    }
-
-    .abStore {
-        flex-direction: column;
-    }
+    padding-right: 20px;
+  }
 }
