@@ -302,13 +302,13 @@ footer {
   font-family: "Noto Sans Georgian";
 }
 .meat1:hover {
-  background-color: #9c9494;
+  background: linear-gradient(to right, #f64343, #df59e3);
 }
 .meat2:hover {
-  background-color: #9c9494;
+  background: linear-gradient(to right, #f64343, #df59e3);
 }
 .meat3:hover {
-  background-color: #9c9494;
+  background: linear-gradient(to right, #f64343, #df59e3);
 }
 .arrowImg {
   width: 35px;
@@ -553,5 +553,28 @@ footer {
     gap: 50px;
     color: white;
     padding-right: 20px;
+  }
+  .meats{
+    display: flex;
+    flex-direction: column;
+  }
+  .meats2{
+    display: flex;
+    flex-direction: column;
+  }
+  .meats3{
+    display: flex;
+    flex-direction: column;
+  }
+  .steak13 {
+    width: 350px;
+    height: 250px;
+  }
+  .steak12{
+    width: 350px;
+    height: 250px;
+  }
+  .meatPrd{
+    width: 250px;
   }
 }
