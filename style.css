@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Agdasima&family=Bebas+Neue&family=Caprasimo&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Ysabeau+Infant:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Agdasima&family=Anton&family=Bebas+Neue&family=Caprasimo&family=Dancing+Script&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Whisper&family=Ysabeau+Infant:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Anton&family=Bebas+Neue&family=Caprasimo&family=Dancing+Script&family=Exo+2:wght@700&family=Hanken+Grotesk:wght@700&family=Honk&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@500;600;700&family=Noto+Sans+Georgian:wght@500&family=Open+Sans:wght@400;600;700&family=Oswald:wght@500&family=Overpass:wght@400;700&family=Playfair+Display&family=Poppins:wght@500;700&family=Red+Hat+Display:wght@500;900&family=Roboto+Mono:wght@600&family=Roboto:wght@500;700&family=Tilt+Prism&family=Whisper&family=Ysabeau+Infant:wght@600&display=swap');
 body:not(.firstH1) {
   font-family: "Noto Sans Georgian";
 }
@@ -35,6 +35,8 @@ header > p {
 .mainContainer {
   overflow: hidden;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .products {
@@ -123,7 +125,7 @@ p {
 .abStore {
   display: flex;
   gap: 70px;
-  padding: 50px 0 50px 50px;
+  padding: 50px 50px 50px 50px;
 }
 .abProduct {
   position: relative;
@@ -225,6 +227,11 @@ footer {
   justify-content: space-between;
   background-color: black;
   bottom: 0;
+}
+.footTr{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .labuch {
   font-family: "Dancing Script";
@@ -359,6 +366,25 @@ footer {
   align-items: center;
   text-align: center;
   padding: 25px;
+}
+.titleFirst{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Playfair Display';
+}
+.teamImgs{
+  width: 500px;
+  height: auto;
+}
+
+.abUsText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
 }
 
 @media screen and (max-width: 550px) {
@@ -531,26 +557,9 @@ footer {
     color: white;
     font-size: 26px;
   }
-  .bestMt{
-    font-size: 24px;
-  }
   .meatStr {
     display: flex;
     flex-direction: column;
-    color: white;
-    padding-right: 20px;
-  }
-  .ourSocs{
-    display: none;
-  }
-  .ourLoc{
-    font-size: 18px;
-  }
-  .uni{
-    font-size: 14px;
-  }
-  .socs {
-    gap: 50px;
     color: white;
     padding-right: 20px;
   }
@@ -577,4 +586,97 @@ footer {
   .meatPrd{
     width: 250px;
   }
+  .mainMt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .firstPart{
+    font-size: 20px;
+  }
+  .meatBig{
+    width: auto;
+    height: auto;
+  }
+  .location > h1{
+    font-size: 25px;
+  }
+  .location{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .socs > h1{
+    font-size: 20px;
+  }
+  .socs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer{
+    display: flex;
+    justify-content: space-between;
+  }
+  .secondPart{
+    font-size: 20px;
+  }
+  .thirdPart{
+    font-size: 20px;
+  }
+  .mainTeam{
+    display: flex;
+    flex-direction: column;
+   }
+   .mainTeamImg{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   }
+   .teamImgs{
+    width: auto;
+    height: auto;
+   }
+}
+
+@media screen and (max-width: 750px) {
+  .abProduct {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .mainLayout {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .teamCont {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .contactUs {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .abStore {
+    display: flex;
+    gap: 30px;
+  }
+  
 }
